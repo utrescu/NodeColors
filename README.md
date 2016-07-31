@@ -13,7 +13,7 @@ Programari
 -----------------
 No és gaire espectacular perquè simplement és un programa per fer proves amb Node.js. i Express 
 
-Fins ara no hi havia fet res i suposo que això es nota perquè intento fer les coses com en Java (objectes independents, externalització de la configuració) però no sembla que sigui el camí :-)
+Fins ara no hi havia fet res i suposo que això es nota perquè intento fer les coses com en Java (separació dels serveis, externalització de la configuració) però no sembla que sigui el camí o no me'n surto :-)
 
 Executar
 -----------------
