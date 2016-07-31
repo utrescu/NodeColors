@@ -1,16 +1,15 @@
 var mysql = require('mysql');
+
+var config = require('config');
+var dbconfig = config.get('Colors.database');
  
 function Connection() {
   this.pool = null;
  
   this.init = function() {
-    this.pool = mysql.createPool({
-      connectionLimit: 10,
-      host: 'localhost',
-      user: 'colors',
-      password: 'colors',
-      database: 'colors'
-    });
+    this.pool = mysql.createPool(
+      dbconfig
+    );
   };
  
   this.acquire = function(callback) {
