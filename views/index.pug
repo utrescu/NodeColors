@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  h1= title
+  div.container
+    h2 Benvingut a #{title}
+    ul 
+      li Per veure  
+        a(href="/colors").
+          tots els colors
+      li Per veure un color concret es posa rere '/color'. Per exemple 
+        a(href="/color/vermell").
+          el vermell
+
