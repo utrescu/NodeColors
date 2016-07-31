@@ -1,6 +1,6 @@
 Colors en català
 ===============================
-En l'exemple es desenvolupa un simple servei REST de colors en llengua catalana que a partir de la petició d'un color en català et diu el seu valor RGB
+En l'exemple es desenvolupa un simple servei REST que a partir de la petició d'un color en català et diu el seu valor RGB
 
     $ curl localhost:3000/color/Vermell
     {"id":71,"nom":"Vermell","rgb":"#FF0000"}
@@ -13,7 +13,7 @@ Programari
 -----------------
 No és gaire espectacular perquè simplement és un programa per fer proves amb Node.js. i Express 
 
-Fins ara no hi havia fet res i suposo que això es nota perquè intento fer les coses com en Java (separació dels serveis, externalització de la configuració) però no sembla que sigui el camí o no me'n surto :-)
+Fins ara no hi havia fet res i suposo que això es nota perquè intento fer les coses com en Java i seguint la teoria d'orientació a objectes (separació dels serveis, externalització de la configuració) però no sembla que aquest sigui el camí que agrada a Node.js o bé és que desconec com fer-ho :-)
 
 Executar
 -----------------
@@ -29,6 +29,6 @@ Després només cal executar-lo amb:
 
 o bé
 
-    $ node bin/www
+    $ node ./app/bin/www
 
 El servidor apareix a [http://localhost:3000](http://localhost:3000)

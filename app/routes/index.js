@@ -11,7 +11,10 @@ router.get('/', function(req, res, next) {
 router.get('/colors', function(req, res, next) {
   console.log('Cercant tots els colors');
   res.header("Content-Type", "application/json");     
-  servei.getAll(function(data) {
+  servei.getAll(function(error, data) {
+    if (error) {
+      res.status(500);
+    }
     res.send(data);
   });
 });
@@ -22,7 +25,10 @@ router.get('/color/:color', function(req, res, next) {
   console.log('Cercant ' + req.params.color);
   res.header("Content-Type", "application/json");     
   
-  servei.get(req.params.color, function(data) {    
+  servei.get(req.params.color, function(error, data) {
+    if (error) {
+      res.status(404);
+    }    
     res.send(data);  
   });
 });

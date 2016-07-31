@@ -2,8 +2,8 @@ var chai = require('chai');
 var should = chai.should();
 
 var request = require('supertest')
-  , express = require('express');
- 
+    , express = require('express');
+
 var app = require('../app/app');
 
 describe('Accés al servidor', function () {
@@ -16,6 +16,7 @@ describe('Accés al servidor', function () {
         it('La pàgina principal davant GET retorna 200 i té títol', function (done) {
             request(app)
                 .get('/')
+                .expect('Content-Type', /html/)
                 .expect(200)
                 .expect(/Colors en català/, done);
         });
@@ -37,26 +38,27 @@ describe('Accés al servidor', function () {
         it('Ha de tornar tots els colors amb GET', function (done) {
             request(app)
                 .get('/colors')
+                .expect('Content-Type', /json/)
                 .expect(200, done);
-        });        
+        });
         /**
          * Comprova que retorna el color demanat.
          */
         it('Torna un color al enviar /color/<nom> GET', function (done) {
             request(app)
-               .get('/color/vermell')
-               .expect('Content-Type', /json/)
-               .expect(200)
-               .expect(/"nom":"Vermell"/,done)               
+                .get('/color/vermell')
+                .expect('Content-Type', /json/)
+                .expect(200)
+                .expect(/"nom":"Vermell"/, done)
         });
         /**
          * Comprova que dóna error quan el color no existeix.
          */
-        it('Torna error quan demanem per patata', function(done) {
+        it('Torna error quan demanem per patata', function (done) {
             request(app)
-              .get('/color/patata')
-              .expect(200)
-              .expect(/"message":"No trobat"/, done);
+                .get('/color/patata')
+                .expect(404)
+                .expect(/"message":"No trobat"/, done);
         });
     });
 });

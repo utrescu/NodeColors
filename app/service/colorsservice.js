@@ -7,23 +7,26 @@ function ColorsService() {
       if (err) {
         result = JSON.parse('{"status": 1, "message": \"' + result + '"}');
       }
-      callback(result);
+      callback(err, result);
     });
   };
 
   // Obtenir només el color especificat
   this.get = function (nom, callback) {
     connection.get(nom, function (err, result) {
-      if (err) {
+      if (err) {  
+        var error = true;     
         var resultat = JSON.parse('{"status": 1, "message": \"' + result + '"}');
       } else {
         if (result.length == 0) {
+          var error = true;          
           var resultat = JSON.parse('{"status": 1, "message": "No trobat"}');
-        } else {
+        } else {          
+          var error = false;
           var resultat = result[0];
         }
       }
-      callback(resultat);
+      callback(error, resultat);
     })
   };
 
