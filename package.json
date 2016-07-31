@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./app/bin/www",
+    "test": "mocha --reporter spec"
   },
   "dependencies": {
     "body-parser": "~1.15.1",
@@ -14,6 +15,10 @@
     "morgan": "~1.7.0",
     "mysql": "^2.11.1",
     "pug": "^2.0.0-beta4",
+    "request": "^2.74.0",
     "serve-favicon": "~2.3.0"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0"
   }
 }
