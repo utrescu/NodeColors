@@ -12,7 +12,6 @@ router.get('/colors', function(req, res, next) {
   console.log('Cercant tots els colors');
   res.header("Content-Type", "application/json");     
   servei.getAll(function(data) {
-    console.log(data);  
     res.send(data);
   });
 });
@@ -24,15 +23,8 @@ router.get('/color/:color', function(req, res, next) {
   res.header("Content-Type", "application/json");     
   
   servei.get(req.params.color, function(data) {    
-    console.log(data);  
     res.send(data);  
   });
 });
 
 module.exports = router;
-
-// var app = require('../app.js');
-
-// app.get('/', function(req, res, next) {
-//   res.render('index', { title: 'Buf'});
-// });
