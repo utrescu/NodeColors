@@ -5,7 +5,7 @@ function ColorsService() {
   this.getAll = function (callback) {
     connection.getAll(function (err, result) {
       if (err) {
-        result = "{status: 1, message: \"" + result + "\"}"
+        result = JSON.parse('{"status": 1, "message": \"' + result + '"}');
       }
       callback(result);
     });
@@ -15,10 +15,10 @@ function ColorsService() {
   this.get = function (nom, callback) {
     connection.get(nom, function (err, result) {
       if (err) {
-        var resultat = "{status: 1, message: \"" + result + "\"}"
+        var resultat = JSON.parse('{"status": 1, "message": \"' + result + '"}');
       } else {
         if (result.length == 0) {
-          var resultat = "{status: 1, message: 'No trobat'}";
+          var resultat = JSON.parse('{"status": 1, "message": "No trobat"}');
         } else {
           var resultat = result[0];
         }
