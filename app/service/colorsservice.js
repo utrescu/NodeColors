@@ -2,18 +2,28 @@ var connection = require('./connection')
 
 function ColorsService() {
   // Obtenir tots els colors de la base de dades
-  this.getAll = function(res) {
-    connection.getAll(function (result) {  
-      res.header("Content-Type", "application/json");     
-      res.send(result);
+  this.getAll = function (callback) {
+    connection.getAll(function (err, result) {
+      if (err) {
+        result = "{status: 1, message: \"" + result + "\"}"
+      }
+      callback(result);
     });
   };
 
   // Obtenir només el color especificat
-  this.get = function(nom, res) {
-    connection.get(nom, function(result) {    
-      res.header("Content-Type", "application/json");  
-      res.send(result);
+  this.get = function (nom, callback) {
+    connection.get(nom, function (err, result) {
+      if (err) {
+        var resultat = "{status: 1, message: \"" + result + "\"}"
+      } else {
+        if (result.length == 0) {
+          var resultat = "{status: 1, message: 'No trobat'}";
+        } else {
+          var resultat = result[0];
+        }
+      }
+      callback(resultat);
     })
   };
 

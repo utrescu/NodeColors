@@ -10,13 +10,23 @@ router.get('/', function(req, res, next) {
 
 router.get('/colors', function(req, res, next) {
   console.log('Cercant tots els colors');
-  servei.getAll(res);
-  // res.end( JSON.stringify(data)); 
+  res.header("Content-Type", "application/json");     
+  servei.getAll(function(data) {
+    console.log(data);  
+    res.send(data);
+  });
 });
+  // res.end( JSON.stringify(data)); 
+
 
 router.get('/color/:color', function(req, res, next) {
   console.log('Cercant ' + req.params.color);
-  servei.get(req.params.color, res);
+  res.header("Content-Type", "application/json");     
+  
+  servei.get(req.params.color, function(data) {    
+    console.log(data);  
+    res.send(data);  
+  });
 });
 
 module.exports = router;
