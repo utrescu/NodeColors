@@ -19,6 +19,10 @@ Executar
 -----------------
 S'ha d'importar el fitxer de dades a una base de dades MySQL i tenir node.js instal·lat
 
+Es descarreguen les dependències: 
+
+    $ npm install
+
 Després només cal executar-lo amb: 
 
     $ npm start
