@@ -2,12 +2,12 @@ Colors en català
 ===============================
 En l'exemple es desenvolupa un simple servei REST de colors en llengua catalana que a partir de la petició d'un color en català et diu el seu valor RGB
 
-$ curl localhost:3000/color/Vermell
-{"id":71,"nom":"Vermell","rgb":"#FF0000"}
+    $ curl localhost:3000/color/Vermell
+    {"id":71,"nom":"Vermell","rgb":"#FF0000"}
 
 Es poden veure tots els colors que hi ha a la base de dades amb (els he tret de la wikipèdia):
 
- $ curl localhost:3000/colors
+     $ curl localhost:3000/colors
 
 Programari
 -----------------
