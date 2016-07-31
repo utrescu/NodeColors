@@ -1,5 +1,6 @@
 CREATE DATABASE IF NOT EXISTS colors;
 CREATE TABLE color (id INT NOT NULL AUTO_INCREMENT, nom TEXT, rgb TEXT, PRIMARY KEY (id));
+GRANT ALL PRIVILEGES ON color.* TO 'colors'@'localhost' IDENTIFIED BY 'colors';
 insert into color (nom, rgb) values('Aiguamarina','#7FFFD4');
 insert into color (nom, rgb) values('Albercoc','#FBCEB1');
 insert into color (nom, rgb) values('Amarant','#E52B50');
