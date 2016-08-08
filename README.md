@@ -19,7 +19,7 @@ Executar
 -----------------
 
 ### Requeriments
-S'ha d'importar el fitxer de dades a una base de dades MySQL. La configuració per connectar a la base de dades està en el fitxer config/default.json i és bastant explicativa:
+S'ha d'importar el fitxer de dades, **data.sql**, a una base de dades MySQL. La configuració per connectar a la base de dades està en el fitxer config/default.json i és bastant explicativa:
 
     {
       "Colors": {
