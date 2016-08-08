@@ -17,9 +17,29 @@ Fins ara no hi havia fet res i suposo que això es nota perquè intento fer les 
 
 Executar
 -----------------
-S'ha d'importar el fitxer de dades a una base de dades MySQL i tenir node.js instal·lat
 
-Es descarreguen les dependències: 
+### Requeriments
+S'ha d'importar el fitxer de dades a una base de dades MySQL. La configuració per connectar a la base de dades està en el fitxer config/default.json i és bastant explicativa:
+
+    {
+      "Colors": {
+        "database": {
+          "connectionLimit": 10,
+          "host": "localhost",      
+          "user": "colors",
+          "password": "colors",
+          "database": "colors"      
+        }
+      }
+    }
+
+I s'ha de tenir node.js instal·lat. La forma més senzilla és amb [nvm](https://github.com/creationix/nvm) i després executar:
+
+    $ nvm install node
+
+### Execució:
+
+Es descarreguen les dependències amb el gestor de paquets de node: 
 
     $ npm install
 
@@ -27,7 +47,7 @@ Després només cal executar-lo amb:
 
     $ npm start
 
-o bé
+o bé amb:
 
     $ node ./app/bin/www
 
