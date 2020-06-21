@@ -7,19 +7,19 @@
     "test": "mocha --reporter spec"
   },
   "dependencies": {
-    "body-parser": "~1.15.1",
+    "body-parser": "^1.19.0",
     "config": "^1.21.0",
     "cookie-parser": "~1.4.3",
     "debug": ">=2.6.9",
     "express": "^4.14.0",
     "morgan": ">=1.9.1",
-    "mysql": "^2.11.1",
+    "mysql": "^2.18.1",
     "pug": "^2.0.0-beta4",
     "request": "^2.74.0",
-    "serve-favicon": "~2.3.0"
+    "serve-favicon": "^2.5.0"
   },
   "devDependencies": {
     "chai": "^3.5.0",
-    "supertest": "^2.0.0"
+    "supertest": "^4.0.2"
   }
 }
